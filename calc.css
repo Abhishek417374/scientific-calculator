@@ -1,0 +1,30 @@
+.bbr{
+    font-family: 'Merriweather', serif;
+    }
+
+.bday{
+    width:38%;
+}   
+.main{
+    width:60%;
+    margin-top:100px;
+    margin-left:20%;
+}
+button{
+    width:10%;
+}
+@media screen and (max-width: 700px){
+    .main{
+        margin:10px 10px 0 10px;
+       
+        width:auto;
+
+    }
+    button{
+        width:20%;
+        padding:10px;
+    }
+    .bday{
+        width:65%;
+    }
+}
