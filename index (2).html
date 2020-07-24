@@ -7,10 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="open.css">
+    <link rel="stylesheet" href="calc.css">  
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
-    <title>hello abhishek</title>
+    <title>calculator</title>
   </head>
   <body class="container-fluid m-0 p-0 bbr bg-dark">
     <div class="justify-content-center bg-secondary border border-dark rounded pt-2 main">
@@ -18,14 +18,14 @@
         SCIENTIFIC CALCULATOR
       </div>
       <div >
-        <form class=" text-center pl-5 pr-5">
-           <input type="text" placeholder="enter value" class=" rounded mt-3 boeder border-dark bg-secondary text-white bday "><br>
+        <form class=" text-center pl-5 pr-5" name="calc">
+           <input type="text"  value="" name="enter-value" class=" rounded mt-3  bg-secondary text-white bday "><br>
             <p class="m-3">
               
               <button type="button" class=" btn btn-dark bg-primary rounded  pr-4 pl-4">deg</button>
-              <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4">sin</button>
-              <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4">cos</button>
-              <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4">tan</button>
+              <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4" onclick="bsin()">sin</button>
+              <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4" onclick="bcos()">cos</button>
+              <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4" onclick="btan()">tan</button>
               <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4">CE</button>
               <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4">C</button>
               <button type="button" class=" btn btn-dark  rounded  pr-4 pl-4">ab</button>
@@ -35,13 +35,13 @@
               
             </p>
             <p class="m-3">
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">X<sup>2</sup></button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">sin<sup>-</sup></button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4 ">cos<sup>-</sup></button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">tan<sup>-</sup></button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">7</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4 ">8</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">9</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="sqr()">X<sup>2</sup></button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="asin()">sin<sup>-</sup></button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4 " onclick="acos()">cos<sup>-</sup></button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="atan()">tan<sup>-</sup></button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('7')">7</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4 " onclick="input('8')">8</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('9')">9</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">&#215;</button>
               
               
@@ -50,14 +50,14 @@
             </p>
             <p class="m-3">
               
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">X<sup>Y</sup></button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">10<sup>X</sup></button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">log</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4"onclick="sqt()">X<sup>Y</sup></button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="tenth()">10<sup>X</sup></button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="log()">log</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">mod</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">4</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">5</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">6</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">-</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('4')">4</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('5')">5</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('6')">6</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('-')">-</button>
               
             </p>
             <p class="m-3">
@@ -66,22 +66,22 @@
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">1/X</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">e<sup>X</sup></button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">ln</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">1</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">2</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">3</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">+</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('1')">1</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('2')">2</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('3')">3</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" >+</button>
               
             </p>
             <p class="m-3">
               
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">&#x03C0;</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="sqrt()">&#x03C0;</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">!</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">(</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">)</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">deg</button>
-              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">0</button>
+              <button type="button" class=" btn btn-dark  rounded pr-4 pl-4" onclick="input('0')">0</button>
               <button type="button" class=" btn btn-dark  rounded pr-4 pl-4">.</button>
-              <button type="button" class=" btn btn-dark  bg-danger rounded pr-4 pl-4">=</button>
+              <button type="button" class=" btn btn-dark  bg-danger rounded pr-4 pl-4" onclick="input('=')">=</button>
               
             </p>
   
@@ -89,11 +89,12 @@
         </form>
       </div>
   
-    </div>
+    </div> 
 
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
